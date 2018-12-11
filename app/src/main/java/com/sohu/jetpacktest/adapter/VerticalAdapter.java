@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sohu.jetpacktest.R;
+import com.sohu.jetpacktest.entity.Movie;
 
 import java.util.ArrayList;
 import java.util.List;

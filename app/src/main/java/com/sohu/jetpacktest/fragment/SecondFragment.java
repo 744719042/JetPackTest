@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sohu.jetpacktest.R;
-import com.sohu.jetpacktest.adapter.Movie;
+import com.sohu.jetpacktest.entity.Movie;
 import com.sohu.jetpacktest.viewmodel.CommunicateViewModel;
 
 /**

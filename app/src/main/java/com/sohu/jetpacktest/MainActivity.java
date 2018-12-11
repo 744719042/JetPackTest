@@ -18,10 +18,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onPagingClick(View view) {
-
-    }
-
     public void onLifecycleClick(View view) {
         Intent intent = new Intent(this, LifecycleTestActivity.class);
         startActivity(intent);
@@ -38,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBindingClick(View view) {
+        Intent intent = new Intent(this, BindingTestActivity.class);
+        startActivity(intent);
+    }
+
+    public void onPagingClick(View view) {
 
     }
 }

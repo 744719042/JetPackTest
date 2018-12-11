@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.sohu.jetpacktest.R;
-import com.sohu.jetpacktest.adapter.Movie;
+import com.sohu.jetpacktest.entity.Movie;
 import com.sohu.jetpacktest.viewmodel.CommunicateViewModel;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.sohu.jetpacktest.adapter;
+package com.sohu.jetpacktest.entity;
 
 public class Movie {
     private int portrait;
