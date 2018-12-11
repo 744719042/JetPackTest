@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sohu.jetpacktest.R;
-import com.sohu.jetpacktest.entity.Movie;
+import com.sohu.jetpacktest.room.entity.MovieEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +22,11 @@ import java.util.List;
 public class VerticalAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
-    private List<Movie> data = new ArrayList<Movie>() {
+    private List<MovieEntity> data = new ArrayList<MovieEntity>() {
         {
-            add(new Movie(R.drawable.rmdmy,"人民的名义", "中央军委后勤保障部金盾影视中心出品的检察反腐电视剧"));
-            add(new Movie(R.drawable.qm,"法医秦明", "法医秦明与法医助理大宝、刑警队大队长林涛屡破要案的故事"));
-            add(new Movie(R.drawable.bigbang,"生活大爆炸", "讲述的是四个宅男科学家和一个美女邻居发生的搞笑生活故事"));
+            add(new MovieEntity(R.drawable.rmdmy,"人民的名义", "中央军委后勤保障部金盾影视中心出品的检察反腐电视剧"));
+            add(new MovieEntity(R.drawable.qm,"法医秦明", "法医秦明与法医助理大宝、刑警队大队长林涛屡破要案的故事"));
+            add(new MovieEntity(R.drawable.bigbang,"生活大爆炸", "讲述的是四个宅男科学家和一个美女邻居发生的搞笑生活故事"));
         }
     };
 
@@ -41,7 +41,7 @@ public class VerticalAdapter extends BaseAdapter {
     }
 
     @Override
-    public Movie getItem(int position) {
+    public MovieEntity getItem(int position) {
         return data.get(position);
     }
 
@@ -74,7 +74,7 @@ public class VerticalAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private void bindView(Movie item, ViewHolder viewHolder) {
+    private void bindView(MovieEntity item, ViewHolder viewHolder) {
         viewHolder.portrait.setImageResource(item.getPortrait());
         viewHolder.name.setText(item.getName());
         viewHolder.desc.setText(item.getDescription());

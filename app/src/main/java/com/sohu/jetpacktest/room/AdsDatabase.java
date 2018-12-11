@@ -9,10 +9,14 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.sohu.jetpacktest.room.dao.DownloadDao;
+import com.sohu.jetpacktest.room.dao.MovieDao;
 import com.sohu.jetpacktest.room.entity.DownloadEntity;
+import com.sohu.jetpacktest.room.entity.MovieEntity;
 
-@Database(entities = { DownloadEntity.class }, version = 2)
+
+@Database(entities = { DownloadEntity.class, MovieEntity.class }, version = 3)
 public abstract class AdsDatabase extends RoomDatabase {
+    private static final String TAG = "AdsDatabase";
     private static AdsDatabase INSTANCE;
     private static Context sContext;
 
@@ -41,6 +45,11 @@ public abstract class AdsDatabase extends RoomDatabase {
                                 public void migrate(@NonNull SupportSQLiteDatabase database) {
                                     database.execSQL("alter table tb_download add column description varchar(255);");
                                 }
+                            }, new Migration(2, 3) {
+                                @Override
+                                public void migrate(@NonNull SupportSQLiteDatabase database) {
+
+                                }
                             })
                             .allowMainThreadQueries()
                             .build();
@@ -51,4 +60,6 @@ public abstract class AdsDatabase extends RoomDatabase {
     }
 
     public abstract DownloadDao getDownloadDao();
+
+    public abstract MovieDao getMovieDao();
 }

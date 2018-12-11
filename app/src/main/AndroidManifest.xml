@@ -30,8 +30,11 @@
         <activity android:name=".ViewModelTestActivity" />
         <activity android:name=".ViewModelRotateActivity" />
         <activity android:name=".ViewModelCommunicateActivity" />
-        <activity android:name=".LiveDataTestActivity"></activity>
-        <activity android:name=".BindingTestActivity"></activity>
+        <activity android:name=".LiveDataTestActivity" />
+        <activity android:name=".BindingTestActivity" />
+        <activity android:name=".PagingTestActivity" />
+        <activity android:name=".NavigationTestActivity" />
+        <activity android:name=".MovieDemoActivity"></activity>
     </application>
 
 </manifest>

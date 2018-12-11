@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sohu.jetpacktest.R;
-import com.sohu.jetpacktest.entity.Movie;
+import com.sohu.jetpacktest.room.entity.MovieEntity;
 import com.sohu.jetpacktest.viewmodel.CommunicateViewModel;
 
 /**
@@ -46,10 +46,10 @@ public class SecondFragment extends Fragment {
         back = view.findViewById(R.id.back);
 
         CommunicateViewModel viewModel = ViewModelProviders.of(getActivity()).get(CommunicateViewModel.class);
-        Movie movie = viewModel.movie;
-        imageView.setImageResource(movie.getPortrait());
-        name.setText(movie.getName());
-        description.setText(movie.getDescription());
+        MovieEntity movieEntity = viewModel.movieEntity;
+        imageView.setImageResource(movieEntity.getPortrait());
+        name.setText(movieEntity.getName());
+        description.setText(movieEntity.getDescription());
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
