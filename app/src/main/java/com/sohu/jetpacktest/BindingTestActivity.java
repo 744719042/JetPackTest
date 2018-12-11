@@ -20,7 +20,7 @@ public class BindingTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityBindingTestBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_binding_test);
-        employee = new Employee(R.drawable.image,"张三", "134888888888", 1, "北京市海淀区中关村", "8888888@qq.com");
+        employee = new Employee(R.drawable.image,"张三", "134888888888", true, "北京市海淀区中关村", "8888888@qq.com");
         binding.setEmployee(employee);
         binding.setPresenter(new Presenter());
 

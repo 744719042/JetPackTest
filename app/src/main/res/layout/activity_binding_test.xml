@@ -126,21 +126,16 @@
 
                     <RadioButton
                         android:text="男"
-                        android:checked="@{ employee.sex == 1 }"
+                        android:checked="@={ employee.sex }"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <RadioButton
                         android:text="女"
-                        android:checked="@{ employee.sex == 2 }"
+                        android:checked="@={ !employee.sex }"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
-                    <RadioButton
-                        android:text="保密"
-                        android:checked="@{ employee.sex == 0  }"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
                 </RadioGroup>
             </LinearLayout>
 

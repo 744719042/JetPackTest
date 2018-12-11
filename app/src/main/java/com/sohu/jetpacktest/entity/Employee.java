@@ -2,17 +2,20 @@ package com.sohu.jetpacktest.entity;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.widget.Toast;
+
 import com.sohu.jetpacktest.BR;
+import com.sohu.jetpacktest.app.JetPackApplication;
 
 public class Employee extends BaseObservable {
     private int portrait;
     private String name;
     private String phone;
-    private int sex;
+    private boolean sex;
     private String address;
     private String email;
 
-    public Employee(int portrait, String name, String phone, int sex, String address, String email) {
+    public Employee(int portrait, String name, String phone, boolean sex, String address, String email) {
         this.portrait = portrait;
         this.name = name;
         this.phone = phone;
@@ -39,12 +42,17 @@ public class Employee extends BaseObservable {
         notifyPropertyChanged(BR.name);
     }
 
-    public int getSex() {
+    @Bindable
+    public boolean getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
-        this.sex = sex;
+    public void setSex(boolean sex) {
+        if (sex != this.sex) {
+            this.sex = sex;
+            Toast.makeText(JetPackApplication.sContext, "sex = " + sex, Toast.LENGTH_SHORT).show();
+            notifyPropertyChanged(BR.sex);
+        }
     }
 
     public String getAddress() {
