@@ -35,6 +35,14 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="LiveData测试"
+        android:textAllCaps="false"
+        android:onClick="onLiveDataClick"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Binding框架测试"
         android:textAllCaps="false"
         android:onClick="onBindingClick"

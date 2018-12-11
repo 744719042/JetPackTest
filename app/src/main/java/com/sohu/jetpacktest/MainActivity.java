@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onLiveDataClick(View view) {
+        Intent intent = new Intent(this, LiveDataTestActivity.class);
+        startActivity(intent);
+    }
+
     public void onBindingClick(View view) {
 
     }

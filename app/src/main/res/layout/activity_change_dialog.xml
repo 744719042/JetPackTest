@@ -4,23 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
+    android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".DialogActivity">
+    tools:context=".ChangeDialogActivity">
 
     <TextView
         android:text="后面的Banner停止滚动"
         android:layout_marginTop="10dp"
-        android:textAllCaps="false"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:text="修改LiveData值"
+        android:onClick="onChangeName"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:text="关闭弹窗"
         android:onClick="onClosed"
-        android:layout_marginTop="10dp"
         android:layout_gravity="right"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

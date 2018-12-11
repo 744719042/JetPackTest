@@ -24,9 +24,14 @@
         <activity
             android:name=".DialogActivity"
             android:theme="@style/Theme.ActivityDialogStyle" />
+        <activity
+            android:name=".ChangeDialogActivity"
+            android:theme="@style/Theme.ActivityDialogStyle" />
         <activity android:name=".ViewModelTestActivity" />
         <activity android:name=".ViewModelRotateActivity" />
-        <activity android:name=".ViewModelCommunicateActivity"></activity>
+        <activity android:name=".ViewModelCommunicateActivity" />
+        <activity android:name=".LiveDataTestActivity">
+        </activity>
     </application>
 
 </manifest>
