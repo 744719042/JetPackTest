@@ -4,6 +4,10 @@
         <variable
             name="employee"
             type="com.sohu.jetpacktest.entity.Employee" />
+
+        <variable
+            name="presenter"
+            type="com.sohu.jetpacktest.BindingTestActivity.Presenter" />
     </data>
     <ScrollView
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -148,13 +152,20 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:text="确认"
+                    android:text="修改姓名"
+                    android:onClick="@{ () -> presenter.changeName(employee) }"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:text="重置"
-                    android:layout_marginLeft="30dp"
+                    android:text="重置姓名"
+                    android:onClick="@{ presenter::reset }"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:text="失活修改"
+                    android:onClick="@{ presenter::showDialog }"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 

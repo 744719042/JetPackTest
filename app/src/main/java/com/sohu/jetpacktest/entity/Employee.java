@@ -1,6 +1,10 @@
 package com.sohu.jetpacktest.entity;
 
-public class Employee {
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+import com.sohu.jetpacktest.BR;
+
+public class Employee extends BaseObservable {
     private int portrait;
     private String name;
     private String phone;
@@ -25,12 +29,14 @@ public class Employee {
         this.portrait = portrait;
     }
 
+    @Bindable
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+        notifyPropertyChanged(BR.name);
     }
 
     public int getSex() {
