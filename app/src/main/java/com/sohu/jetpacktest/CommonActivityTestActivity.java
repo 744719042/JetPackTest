@@ -25,6 +25,7 @@ public class CommonActivityTestActivity extends Activity implements LifecycleOwn
         setContentView(R.layout.activity_common_test);
         verticalScrollView = findViewById(R.id.verticalScrollView);
         verticalScrollView.setAdapter(new VerticalAdapter(this));
+        verticalScrollView.bindLifecycle(this);
         getLifecycle().addObserver(new DefaultLifecycleObserver() {
             @Override
             public void onCreate(@NonNull LifecycleOwner owner) {
@@ -77,20 +78,20 @@ public class CommonActivityTestActivity extends Activity implements LifecycleOwn
 
     @Override
     protected void onPause() {
-        super.onPause();
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
+        super.onPause();
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
+        super.onDestroy();
     }
 
     @NonNull

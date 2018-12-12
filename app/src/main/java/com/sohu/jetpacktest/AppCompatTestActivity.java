@@ -23,6 +23,7 @@ public class AppCompatTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_app_compat_test);
         verticalScrollView = findViewById(R.id.verticalScrollView);
         verticalScrollView.setAdapter(new VerticalAdapter(this));
+        verticalScrollView.bindLifecycle(this);
         getLifecycle().addObserver(new DefaultLifecycleObserver() {
             @Override
             public void onCreate(@NonNull LifecycleOwner owner) {

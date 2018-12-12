@@ -24,9 +24,7 @@ public class ViewModelRotateActivity extends AppCompatActivity {
         text = findViewById(R.id.text);
         viewModel = ViewModelProviders.of(this).get(TestViewModel.class);
 
-        if (!TextUtils.isEmpty(name) || !TextUtils.isEmpty(viewModel.name)) {
-            Toast.makeText(this, "name = " + name + ", viewModel.name = " + viewModel.name, Toast.LENGTH_LONG).show();
-        }
+        Toast.makeText(this, "name = " + name + ", viewModel.name = " + viewModel.name, Toast.LENGTH_LONG).show();
     }
 
     public void saveName(View view) {

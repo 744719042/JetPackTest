@@ -33,7 +33,7 @@ public class VerticalScrollView extends FrameLayout {
             animatorSet.start();
             recycleView = currentView;
             currentView = newView;
-            postDelayed(this, 3000);
+            postDelayed(this, 1500);
         }
     };
 
@@ -51,28 +51,30 @@ public class VerticalScrollView extends FrameLayout {
     }
 
     private void init() {
-        if (getContext() instanceof LifecycleOwner) {
-            ((LifecycleOwner) getContext()).getLifecycle().addObserver(new DefaultLifecycleObserver() {
-                @Override
-                public void onResume(@NonNull LifecycleOwner owner) {
-                    if (adapter != null) {
-                        resumePlay();
-                    }
-                }
 
-                @Override
-                public void onPause(@NonNull LifecycleOwner owner) {
-                    if (adapter != null) {
-                        pausePlay();
-                    }
-                }
+    }
 
-                @Override
-                public void onDestroy(@NonNull LifecycleOwner owner) {
-                    destroy();
+    public void bindLifecycle(LifecycleOwner lifecycleOwner) {
+        lifecycleOwner.getLifecycle().addObserver(new DefaultLifecycleObserver() {
+            @Override
+            public void onResume(@NonNull LifecycleOwner owner) {
+                if (adapter != null) {
+                    resumePlay();
                 }
-            });
-        }
+            }
+
+            @Override
+            public void onPause(@NonNull LifecycleOwner owner) {
+                if (adapter != null) {
+                    pausePlay();
+                }
+            }
+
+            @Override
+            public void onDestroy(@NonNull LifecycleOwner owner) {
+                destroy();
+            }
+        });
     }
 
     public void setAdapter(BaseAdapter adapter) {
@@ -89,13 +91,13 @@ public class VerticalScrollView extends FrameLayout {
         addView(currentView);
     }
 
-    public void pausePlay() {
+    private void pausePlay() {
         removeCallbacks(playRunnable);
     }
 
-    public void resumePlay() {
+    private void resumePlay() {
         removeCallbacks(playRunnable);
-        postDelayed(playRunnable, 1000);
+        postDelayed(playRunnable, 1500);
     }
 
     public void destroy() {
