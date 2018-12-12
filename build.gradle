@@ -32,4 +32,5 @@ ext {
     archLifecycleVersion = '1.1.1'
     lifecycle_version = "1.1.1"
     paging_version = '1.0.0'
+    nav_version = '1.0.0-alpha01'
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_test"
+    app:startDestination="@id/fragmentOne">
+
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.sohu.jetpacktest.nav.FragmentOne"
+        android:label="fragment_fragment_one"
+        tools:layout="@layout/fragment_fragment_one" >
+        <action android:id="@+id/action_two"
+            app:destination="@id/fragmentTwo" />
+        <action android:id="@+id/action_four"
+            app:destination="@id/fragmentFour" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.sohu.jetpacktest.nav.FragmentTwo"
+        android:label="fragment_fragment_two"
+        tools:layout="@layout/fragment_fragment_two">
+        <action android:id="@+id/action_three"
+            app:destination="@id/fragmentThree" />
+        <action android:id="@+id/action_four"
+            app:destination="@id/fragmentFour" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.sohu.jetpacktest.nav.FragmentThree"
+        android:label="fragment_fragment_three"
+        tools:layout="@layout/fragment_fragment_three">
+        <action android:id="@+id/action_two"
+            app:destination="@id/fragmentTwo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:name="com.sohu.jetpacktest.nav.FragmentFour"
+        android:label="fragment_fragment_four"
+        tools:layout="@layout/fragment_fragment_four">
+        <action android:id="@+id/action_one"
+            app:popUpTo="@id/fragmentOne" />
+    </fragment>
+</navigation>
