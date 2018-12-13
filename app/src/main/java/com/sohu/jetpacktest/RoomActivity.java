@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.sohu.jetpacktest.room.AdsDatabase;
 import com.sohu.jetpacktest.room.dao.DownloadDao;
@@ -18,6 +19,10 @@ public class RoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
+
+        if (getIntent().hasExtra("name")) {
+            Toast.makeText(this, getIntent().getStringExtra("name"), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void onInsert(View view) {

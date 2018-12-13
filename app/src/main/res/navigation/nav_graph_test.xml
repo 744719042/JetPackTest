@@ -5,6 +5,9 @@
     android:id="@+id/nav_graph_test"
     app:startDestination="@id/fragmentOne">
 
+    <action android:id="@+id/action_global_one"
+        app:destination="@id/fragmentOne" />
+
     <fragment
         android:id="@+id/fragmentOne"
         android:name="com.sohu.jetpacktest.nav.FragmentOne"
@@ -14,6 +17,8 @@
             app:destination="@id/fragmentTwo" />
         <action android:id="@+id/action_four"
             app:destination="@id/fragmentFour" />
+        <action android:id="@+id/action_room"
+            app:destination="@id/roomActivity" />
     </fragment>
 
     <fragment
@@ -44,4 +49,14 @@
         <action android:id="@+id/action_one"
             app:popUpTo="@id/fragmentOne" />
     </fragment>
+    <activity
+        android:id="@+id/roomActivity"
+        android:name="com.sohu.jetpacktest.RoomActivity"
+        android:label="activity_room"
+        tools:layout="@layout/activity_room" >
+        <argument
+            android:name="name"
+            android:defaultValue="lisi"
+            app:type="string" />
+    </activity>
 </navigation>

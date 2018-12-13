@@ -47,5 +47,12 @@ public class FragmentOne extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_four);
             }
         });
+
+        view.findViewById(R.id.gotoRoom).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_room);
+            }
+        });
     }
 }

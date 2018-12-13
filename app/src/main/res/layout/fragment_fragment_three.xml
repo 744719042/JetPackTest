@@ -16,6 +16,14 @@
         android:text="Fragment Three" />
 
     <Button
+        android:id="@+id/gotoOne"
+        android:text="去FragmentOne"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
         android:id="@+id/gotoTwo"
         android:text="去FragmentTwo"
         android:layout_marginTop="10dp"
