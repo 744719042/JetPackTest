@@ -8,11 +8,14 @@ import android.arch.persistence.room.migration.Migration;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.sohu.jetpacktest.DatabaseWorker;
 import com.sohu.jetpacktest.room.dao.DownloadDao;
 import com.sohu.jetpacktest.room.dao.MovieDao;
 import com.sohu.jetpacktest.room.entity.DownloadEntity;
 import com.sohu.jetpacktest.room.entity.MovieEntity;
 
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
 
 @Database(entities = { DownloadEntity.class, MovieEntity.class }, version = 3)
 public abstract class AdsDatabase extends RoomDatabase {
@@ -33,6 +36,8 @@ public abstract class AdsDatabase extends RoomDatabase {
                                     @Override
                                     public void onCreate(@NonNull SupportSQLiteDatabase db) {
                                         super.onCreate(db);
+                                        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(DatabaseWorker.class).build();
+                                        WorkManager.getInstance().enqueue(request);
                                     }
 
                                     @Override
