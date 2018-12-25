@@ -14,7 +14,4 @@ public interface MovieDao {
 
     @Query("select * from tb_movie")
     DataSource.Factory<Integer, MovieEntity> getAllMovies();
-
-    @Query("select count(*) from tb_movie")
-    int count();
 }

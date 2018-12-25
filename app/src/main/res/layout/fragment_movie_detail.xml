@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.sohu.jetpacktest.room.entity.MovieEntity" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        tools:context=".fragment.MovieDetailFragment">
+
+        <ImageView
+            android:src="@{ movie.portrait }"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:text="@{ movie.name }"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{ movie.description }"
+            android:maxLines="3"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:text="返回电影列表页"
+            android:onClick="@{ listener::onClick }"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</layout>
