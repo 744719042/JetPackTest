@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.sohu.jetpacktest.viewmodel.TestViewModel;
 
 public class ViewModelRotateActivity extends AppCompatActivity {
+    private static final String TAG = "ViewModelRotateActivity";
 
     private String name;
     private TestViewModel viewModel;
@@ -24,6 +26,7 @@ public class ViewModelRotateActivity extends AppCompatActivity {
         text = findViewById(R.id.text);
         viewModel = ViewModelProviders.of(this).get(TestViewModel.class);
 
+        Log.e(TAG, viewModel.toString());
         Toast.makeText(this, "name = " + name + ", viewModel.name = " + viewModel.name, Toast.LENGTH_LONG).show();
     }
 
